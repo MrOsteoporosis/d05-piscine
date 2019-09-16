@@ -6,11 +6,9 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 09:33:58 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 16:36:52 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 16:37:37 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_isdigit(char c)
 {
