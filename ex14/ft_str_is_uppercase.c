@@ -6,10 +6,9 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 14:05:19 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 14:05:48 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 14:45:58 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int		ft_strlen(char *str)
 {
