@@ -6,11 +6,9 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 12:42:33 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 13:34:33 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 13:37:18 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -112,7 +110,7 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (!ft_islpha(str[t - 1]) && !ft_isdigit(str[t - 1]))
 		{
-			if(str[t] > 96 && str[t] < 123)
+			if (str[t] > 96 && str[t] < 123)
 			{
 				str[t] -= 32;
 			}
