@@ -6,61 +6,71 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 09:33:58 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 10:07:38 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 16:36:52 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int length;
+#include <stdio.h>
 
-	length = 0;
-	while (str[length] != '\0')
+int		ft_isdigit(char c)
+{
+	char	digits[11];
+	int		temp;
+
+	digits[0] = '-';
+	digits[1] = '0';
+	temp = 1;
+	while (temp < 11)
 	{
-		length = length + 1;
+		digits[temp] = digits[temp - 1] + 1;
+		temp++;
 	}
-	return (length);
+	temp = 0;
+	while (temp < 11)
+	{
+		if (c == digits[temp])
+		{
+			return (1);
+		}
+		temp++;
+	}
+	return (0);
 }
 
-int		ft_factor(int length)
+int		ft_trimtodigits(char *str)
 {
-	int factor;
-	int temp;
+	int i;
 
-	factor = 1;
-	temp = 1;
-	while (temp < length)
+	i = 0;
+	while (!(ft_isdigit(str[i])) && str[i] != '\0')
 	{
-		factor = factor * 10;
-		temp = temp + 1;
+		i++;
 	}
-	return (factor);
+	return (i);
 }
 
 int		ft_atoi(char *str)
 {
 	int converted;
-	int length;
-	int factor;
-	int temp;
+	int sign;
+	int i;
 
-	length = ft_strlen(str);
-	factor = ft_factor(length);
-	temp = 0;
-	if (str[0] == '-')
+	converted = 0;
+	sign = 1;
+	i = ft_trimtodigits(str);
+	if (str[i] == '-')
 	{
-		temp = temp + 1;
-		factor = factor / 10;
+		sign = -1;
+		i++;
 	}
-	while (temp < length)
+	while (str[i] != '\0')
 	{
-		converted = converted + ((str[temp] - 48) * factor);
-		temp = temp + 1;
-		factor = factor / 10;
+		if (str[i] < '0' || str[i] > '9')
+		{
+			return (sign * converted);
+		}
+		converted = converted * 10 + str[i] - '0';
+		i++;
 	}
-	if (str[0] == '-')
-	{
-		converted = converted * -1;
-	}
-	return (converted);
+	return (sign * converted);
 }
