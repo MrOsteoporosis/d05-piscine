@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 11:49:39 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 12:04:56 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 12:07:11 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ int		main(void)
 	printf("%s\n", str1);
 	printf("%s\n", str2);
 	printf("%d", ft_strcmp(str1, str2));
-
 }
