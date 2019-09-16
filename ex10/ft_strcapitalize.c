@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 12:42:33 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 13:30:16 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/16 13:34:33 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,30 @@ int		ft_islpha(char c)
 	while (temp < 52)
 	{
 		if (c == alphabet[temp])
+		{
+			return (1);
+		}
+		temp++;
+	}
+	return (0);
+}
+
+int		ft_isdigit(char c)
+{
+	char	digits[10];
+	int		temp;
+
+	digits[0] = '0';
+	temp = 1;
+	while (temp < 10)
+	{
+		digits[temp] = digits[temp - 1] + 1;
+		temp++;
+	}
+	temp = 0;
+	while (temp < 10)
+	{
+		if (c == digits[temp])
 		{
 			return (1);
 		}
@@ -86,9 +110,12 @@ char	*ft_strcapitalize(char *str)
 	t = 1;
 	while (t < length)
 	{
-		if ((!ft_islpha(str[t - 1])) && str[t] > 96 && str[t] < 123)
+		if (!ft_islpha(str[t - 1]) && !ft_isdigit(str[t - 1]))
 		{
-			str[t] -= 32;
+			if(str[t] > 96 && str[t] < 123)
+			{
+				str[t] -= 32;
+			}
 		}
 		t++;
 	}
