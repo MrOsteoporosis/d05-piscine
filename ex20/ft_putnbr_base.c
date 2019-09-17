@@ -6,13 +6,13 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/17 13:36:04 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/17 14:07:59 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/17 15:09:00 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int length;
 
