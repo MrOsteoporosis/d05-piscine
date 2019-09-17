@@ -6,27 +6,27 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 09:33:58 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/16 16:37:37 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/17 12:14:27 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(char c)
+int		ft_iswhitespace(char c)
 {
-	char	digits[11];
+	char	whitespace[6];
 	int		temp;
 
-	digits[0] = '-';
-	digits[1] = '0';
+	whitespace[0] = 32;
+	whitespace[1] = 9;
 	temp = 1;
-	while (temp < 11)
+	while (temp < 6)
 	{
-		digits[temp] = digits[temp - 1] + 1;
+		whitespace[temp] = whitespace[temp - 1] + 1;
 		temp++;
 	}
 	temp = 0;
 	while (temp < 11)
 	{
-		if (c == digits[temp])
+		if (c == whitespace[temp])
 		{
 			return (1);
 		}
@@ -35,12 +35,12 @@ int		ft_isdigit(char c)
 	return (0);
 }
 
-int		ft_trimtodigits(char *str)
+int		ft_trimwhitespace(char *str)
 {
 	int i;
 
 	i = 0;
-	while (!(ft_isdigit(str[i])) && str[i] != '\0')
+	while ((str[i] == 32 || (str[i] >= 9 && str[i] <= 13)) && str[i] != '\0')
 	{
 		i++;
 	}
@@ -55,7 +55,7 @@ int		ft_atoi(char *str)
 
 	converted = 0;
 	sign = 1;
-	i = ft_trimtodigits(str);
+	i = ft_trimwhitespace(str);
 	if (str[i] == '-')
 	{
 		sign = -1;
