@@ -6,34 +6,9 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/09/16 09:33:58 by averheij       #+#    #+#                */
-/*   Updated: 2019/09/17 12:14:27 by averheij      ########   odam.nl         */
+/*   Updated: 2019/09/17 12:15:36 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-int		ft_iswhitespace(char c)
-{
-	char	whitespace[6];
-	int		temp;
-
-	whitespace[0] = 32;
-	whitespace[1] = 9;
-	temp = 1;
-	while (temp < 6)
-	{
-		whitespace[temp] = whitespace[temp - 1] + 1;
-		temp++;
-	}
-	temp = 0;
-	while (temp < 11)
-	{
-		if (c == whitespace[temp])
-		{
-			return (1);
-		}
-		temp++;
-	}
-	return (0);
-}
 
 int		ft_trimwhitespace(char *str)
 {
